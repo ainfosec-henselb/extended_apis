@@ -32,13 +32,13 @@ vic::vic(
     m_virt_apic_base{0}
 {
     init_phys_idt();
-    init_phys_lapic();
-    init_virt_lapic();
-    init_save_state();
-    init_interrupt_map();
+    // init_phys_lapic();
+    // init_virt_lapic();
+    // init_save_state();
+    // init_interrupt_map();
 
-    add_exit_handlers();
-    m_phys_lapic->disable_interrupts();
+    // add_exit_handlers();
+    // m_phys_lapic->disable_interrupts();
 }
 
 vic::~vic()
