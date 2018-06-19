@@ -168,7 +168,7 @@ struct variable_range
         const uint64_t size = mask_msr_to_size(mask_msr, pas);
         constexpr uint64_t min_size = 0x1000U;
 
-        expects(pas >= 39U && pas <= 52U);
+        expects(pas >= 36U && pas <= 52U);
         expects(::intel_x64::mtrr::valid_type(type));
         expects(x64::is_physical_address_valid(base, pas));
         expects(size >= min_size);

@@ -371,9 +371,9 @@ void vcpu::add_efi_handlers()
 
 vcpu::vcpu(vcpuid::type id) :
         bfvmm::intel_x64::vcpu{id},
-        m_emm{std::make_unique<eapis::intel_x64::ept::memory_map>()},
         m_hve{std::make_unique<eapis::intel_x64::hve>(exit_handler(), vmcs())},
-        m_vic{std::make_unique<eapis::intel_x64::vic>(m_hve.get(), m_emm.get())}
+        m_emm{std::make_unique<eapis::intel_x64::ept::memory_map>()}
+//        m_vic{std::make_unique<eapis::intel_x64::vic>(m_hve.get(), m_emm.get())}
     {
         if (get_platform_info()->efi.enabled)
         {
